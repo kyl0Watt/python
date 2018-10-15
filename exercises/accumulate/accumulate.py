@@ -1,2 +1,5 @@
 def accumulate(collection, operation):
-    pass
+    accumulator = list()
+    for i in collection:
+        accumulator.append(operation(i))
+    return accumulator
