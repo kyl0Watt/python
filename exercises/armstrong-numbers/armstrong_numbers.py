@@ -1,2 +1,5 @@
 def is_armstrong(number):
-    pass
+    acc = 0
+    for i in str(number):
+        acc =+ int(i)**len(str(number))
+    return number == acc
