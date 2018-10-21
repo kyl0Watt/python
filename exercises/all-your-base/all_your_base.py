@@ -1,6 +1,6 @@
 def rebase(input_base, digits, output_base):           # TODO make it work!
-    if input_base or output_base <= 0:
-        raise ValueError('something go wrong')
+    # if input_base or output_base > 1:
+    #     raise ValueError('something go wrong with base')
     d = ''
     for i in digits:
         if 0 <= i < 10:
