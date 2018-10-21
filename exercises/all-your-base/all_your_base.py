@@ -1,5 +1,5 @@
 def rebase(input_base, digits, output_base):           # TODO make it work!
-    if not input_base or not output_base:
+    if input_base or output_base <= 0:
         raise ValueError('something go wrong')
     d = ''
     for i in digits:
