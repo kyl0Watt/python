@@ -39,7 +39,7 @@ def decode(ciphered_text, a, b):
             result += i
         elif i in alphabet:
             index = alphabet.index(i)
-            new_index = (int(gmpy.invert(a, len(alphabet)))*\
+            new_index = (int(gmpy.invert(a, len(alphabet))) * \
             (index - b)) % len(alphabet)
             result += alphabet[new_index]
         else:
