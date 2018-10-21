@@ -1,10 +1,11 @@
 import gmpy
 
 
-alphabet = 'abcdefghijklmnopqrstuvwxyz'         #TODO: make it norm
+alphabet = 'abcdefghijklmnopqrstuvwxyz'         # TODO: make it norm
+
 
 def encode(plain_text, a, b):
-    if a % 2 == 0:                              #not solution
+    if a % 2 == 0:                              # not solution
         raise ValueError('somwthing wrong')
     result = []
     counter = 0
@@ -25,13 +26,13 @@ def encode(plain_text, a, b):
         if result[-1] == ' ':
             result.pop()
     if ''.join(result)[-1] == ' ':
-        return ''.join(result)[:-1]         #this is mistake
+        return ''.join(result)[:-1]         # this is mistake
     return ''.join(result)
 
 
 def decode(ciphered_text, a, b):
     if len(alphabet) % a == 0:
-        raise ValueError('it wrong')      #this is mistake tooo
+        raise ValueError('it wrong')      # this is mistake tooo
     result = []
     for i in ciphered_text:
         if i in '0123456789':
