@@ -2,6 +2,7 @@ import gmpy
 
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'         # TODO: make it norm
+alen = len(alphabet)
 
 
 def encode(plain_text, a, b):
@@ -18,7 +19,7 @@ def encode(plain_text, a, b):
             counter += 1
         elif i in alphabet:
             index = alphabet.index(i)
-            new_index = (a*index + b) % len(alphabet)
+            new_index = (a*index + b) % alen
             result += alphabet[new_index]
             counter += 1
         else:
@@ -39,9 +40,8 @@ def decode(ciphered_text, a, b):
             result += i
         elif i in alphabet:
             index = alphabet.index(i)
-            new_index = (int(gmpy.invert(a, len(alphabet))) * \
-            (index - b)) % len(alphabet)
-            result += alphabet[new_index]
+            ni = int(gmpy.invert(a, alen)) / (index - b) % alen
+            result += alphabet[ni]
         else:
             continue
     return ''.join(result)
